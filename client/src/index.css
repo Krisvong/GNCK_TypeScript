@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font: 300 25px/1.4 'Helvetica Neue', 'sans-serif';
+  font: 300 25px/1.4;
+  font-family: 'Nunito', sans-serif;
   color: #5e2bffff;
   background: #272932ff;
   overflow: hidden;
@@ -9,9 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
+
 
 /* Set text color for table cells */
 

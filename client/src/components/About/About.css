@@ -1,10 +1,48 @@
-.card-title {
-    font-size: 16pt;
-    font-weight: bold;
-    font-family: Verdana;
-}
+.aboutpage {
+    background-color: var(--raisin-black);
+  }
+  
+  .card-deck .card {
+    height: 20vh; /* Adjust this value to set the height of the card */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--flax);
+    color: var(--raisin-black);
+    border: none;
+    margin: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    text-align: center;
 
-.card-text {
-    font-size: 12pt;
-    font-family: Verdana;
+  }
+  
+  .card-deck .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .card-deck .card-title {
+    color: var(--raisin-black);
+  }
+  
+  .card-deck .card-text {
+    color: var(--raisin-black);
+    font-size: 18px;
+  }
+  
+  svg.svg-inline--fa.fa-github {
+    color: black;
+    font-size: 2rem; /* adjust this value to make the icon bigger */
+    transform: translateY(1.0rem); /* adjust this value to move the icon down */
 }
+  
+  svg.svg-inline--fa.fa-github:hover {
+    color: var(--moonstone);
+  }
+  
+  h5.card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }

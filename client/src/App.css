@@ -7,7 +7,6 @@
   --flax: #ecdd7bff;
   --moonstone: #01a7c2ff;
   --white: #ffffff;
-  --fluorescent-cyan: #80FFEC;
 
 }
 
@@ -22,6 +21,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
-
 }
 
+.nav-link {
+  color: var(--aquamarine);
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
