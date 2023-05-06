@@ -28,7 +28,7 @@
   color: var(--moonstone);
   position: fixed;
   top: 50%;
-  left: -3px;
+  left: -1px;
 
 }
 
@@ -48,6 +48,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .completed-list {

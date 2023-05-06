@@ -16,10 +16,11 @@ p.text-center {
     background-color: var(--white);
     border: none;
     border-radius: 5px;
+    justify-content: center;
     padding: 10px;
     margin-right: 5px;
-    width: 30%;
-    height: 4.5vh;
+    width: 23%;
+    height: 4vh;
     margin-bottom: 10px;
   }
   

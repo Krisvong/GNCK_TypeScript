@@ -7,15 +7,13 @@
   --flax: #ecdd7bff;
   --moonstone: #01a7c2ff;
   --white: #ffffff;
-  --fluorescent-cyan: #80FFEC;
 
 }
-
 
 body {
   background-color: #272932ff;
   color:#80FFEC;
-  margin-top: none;
+  margin: 0;
   font: 300 25px/1.4;
   font-family: 'Nunito', sans-serif;
   overflow: hidden;
@@ -23,7 +21,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
-
 }
 
+.nav-link {
+  color: var(--aquamarine);
+}
 
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
