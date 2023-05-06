@@ -26,15 +26,4 @@ body {
 
 }
 
-.caret-right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 4em;
-  color: var(--moonstone);
-  position: fixed;
-  bottom: 10em;
-
-}
 
