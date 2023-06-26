@@ -1,0 +1,62 @@
+// Variables
+$primary-color: var(--raisin-black);
+$secondary-color: var(--flax);
+$icon-size: 2rem;
+$icon-translate-y: 1.0rem;
+$card-height: 20vh;
+$card-margin: 1rem;
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+$card-text-font-size: 18px;
+$card-title-font-size: 24px;
+$card-title-font-weight: bold;
+
+.aboutpage {
+  background-color: $primary-color;
+
+  .card-deck {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card {
+      height: $card-height;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $secondary-color;
+      color: $primary-color;
+      border: none;
+      margin: $card-margin;
+      box-shadow: $box-shadow;
+      transition: 0.3s;
+      border-radius: 5px;
+      text-align: center;
+
+      &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .card-title {
+        color: $primary-color;
+        font-size: $card-title-font-size;
+        font-weight: $card-title-font-weight;
+      }
+
+      .card-text {
+        color: $primary-color;
+        font-size: $card-text-font-size;
+      }
+    }
+  }
+
+
+  svg.svg-inline--fa.fa-github {
+    color: black;
+    font-size: $icon-size;
+    transform: translateY($icon-translate-y);
+
+    &:hover {
+      color: var(--moonstone);
+    }
+  }
+}

@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import "./About.css"
+import "./About.scss"
 
 function About() {
     return (
@@ -46,7 +46,7 @@ function About() {
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Kristen</h5>
-                            <p className="card-text">Hi there! I am Kristen, a software developer. I am passionate about fitness, reading, and I love to learn about new technologies.</p>
+                            <p className="card-text">Hi there! I am Kristen, a software developer. I am passionate about fitness, reading, and I love to learn about new technologies. I am thrilled to embark on this new software development journey, where I can channel my passion, expand my skills, and create innovative solutions that shape the future. </p>
                             <div className="github-link">
                                 <a href="https://github.com/Krisvong">
                                     <FontAwesomeIcon icon={faGithub} />
