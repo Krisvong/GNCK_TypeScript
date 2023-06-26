@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db.js"); // Import the database connection pool from db.js
-const path = require('path');
 
 // Set up middleware
 app.use(cors()); // Enable CORS (Cross-Origin Resource Sharing)
@@ -11,12 +10,11 @@ app.use(express.json()); // Enable JSON parsing for request bodies
 require("dotenv").config(); // Load environment variables from a .env file if it exists
 
 // Define routes for the application
-app.use(express.static(path.resolve(__dirname, '..', 'client/build')))
 
 //Welcome message route
-//app.get("/", (req, res) => {
- // res.send("Welcome to our Todo API, where you can procrastinate in style!");
-//});
+app.get("/", (req, res) => {
+  res.send("Welcome to our Todo API, where you can procrastinate in style!");
+});
 
 // Route to CREATE a new todo
 // To test in POSTMAN: POST http://localhost:5001/todos/ (in the body raw JSON: { "description": "Create a TODO API", "due_date": "2023-05-01" })
@@ -224,5 +222,3 @@ app.listen(process.env.PORT, () => {
     `Making a todo list on port: ${process.env.PORT} with the ALLSTARS Casey, Nick, Gregg, and Kristen`
   );
 });
-
-module.exports = app;
