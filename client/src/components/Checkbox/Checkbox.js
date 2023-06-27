@@ -1,6 +1,6 @@
 import React from "react";
 import "./Checkbox.scss";
-import { MDBSwitch } from 'mdb-react-ui-kit';
+// import { MDBSwitch } from 'mdb-react-ui-kit';
 
 
 //Define the Checkbox component with the props 'todo' and 'onChange'
@@ -40,11 +40,15 @@ const Checkbox = ({ todo, onChange }) => {
   };
 
   return (
-    <button
-      checked={!!todo.completed} // Ensure that checked is always defined
-      onChange={handleOnChange}>
-      <MDBSwitch />
-    </button>
+    <label className="switch">
+      <input
+        type="checkbox"
+        checked={!!todo.completed}
+        onChange={handleOnChange}
+        className="switch-input"
+      />
+      <span className="switch-slider"></span>
+    </label>
   );
 };
 

@@ -1,0 +1,37 @@
+.completed {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-family: 'Nunito', sans-serif;
+  
+    h3 {
+      font-family: 'Nunito', sans-serif;
+    }
+  
+    ul {
+      list-style-type: none;
+      flex-direction: row;
+      width: 50%;
+    }
+  
+    li {
+      text-align: center;
+      color: #c0c0c0;
+      text-decoration-line: line-through;
+      justify-content: space-between;
+    }
+  
+    button {
+      color: var(--bittersweet);
+      background-color: transparent;
+      border: none;
+      border-radius: 5px;
+      padding: 3px;
+      margin-bottom: 10px;
+      font-weight: 20;
+    }
+  }
+  

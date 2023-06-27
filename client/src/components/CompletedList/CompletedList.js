@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './CompletedList.css';
+import './CompletedList.scss';
 import { BsXCircleFill } from 'react-icons/bs';
 
 
