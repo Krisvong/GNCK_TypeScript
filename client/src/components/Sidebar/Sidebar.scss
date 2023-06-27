@@ -7,16 +7,16 @@
   background-color: var(--moonstone);
   overflow-x: hidden;
   transition: width 0.5s;
-}
 
-.sidebar-container:hover,
-.show-calendar .sidebar-container {
-  width: 1000px;
-}
+  &:hover,
+  .show-calendar & {
+    width: 1000px;
+  }
 
-.sidebar-container button {
-  margin: 10px;
-  padding: 5px;
+  button {
+    margin: 10px;
+    padding: 5px;
+  }
 }
 
 .caret-right {
@@ -29,16 +29,14 @@
   position: fixed;
   top: 50%;
   left: -1px;
-
 }
-
 
 .calendar-container {
   display: none;
-}
 
-.show-calendar .calendar-container {
-  display: block;
+  .show-calendar & {
+    display: block;
+  }
 }
 
 .calendar-button {

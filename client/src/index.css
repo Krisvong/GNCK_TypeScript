@@ -1,26 +1,19 @@
 body {
   margin: 0;
   font: 300 25px/1.4;
-  font-family: 'Nunito', sans-serif;
-  color: #5e2bffff;
-  background: #272932ff;
+  font-family: "Nunito", sans-serif;
+  color: #5e2bff;
+  background: #272932;
   overflow: hidden;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-/* Set text color for table cells */
-
-
-/* Set background color for warning and danger buttons */
 button.btn.btn-warning {
-  background-color: #ecdd7bff;
+  background-color: #ecdd7b;
 }
 
 button.btn.btn-danger {
   background-color: #e0115f;
-}
-
+}/*# sourceMappingURL=index.css.map */

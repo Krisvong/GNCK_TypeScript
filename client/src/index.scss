@@ -1,0 +1,28 @@
+$body-color: #5e2bffff;
+$body-background: #272932ff;
+$button-warning-bg: #ecdd7bff;
+$button-danger-bg: #e0115f;
+
+body {
+  margin: 0;
+  font: 300 25px/1.4;
+  font-family: 'Nunito', sans-serif;
+  color: $body-color;
+  background: $body-background;
+  overflow: hidden;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Set text color for table cells
+
+
+// Set background color for warning and danger buttons
+button.btn.btn-warning {
+  background-color: $button-warning-bg;
+}
+
+button.btn.btn-danger {
+  background-color: $button-danger-bg;
+}

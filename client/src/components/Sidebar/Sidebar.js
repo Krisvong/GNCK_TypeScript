@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MyCalendar from "../MyCalendar/MyCalendar";
-import "./Sidebar.css";
+import "./Sidebar.scss";
 import CompletedList from "../CompletedList/CompletedList";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
