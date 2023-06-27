@@ -1,4 +1,4 @@
-.completed {
+@mixin common-styles {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -33,5 +33,9 @@
       margin-bottom: 10px;
       font-weight: 20;
     }
+  }
+  
+  .completed {
+    @include common-styles;
   }
   

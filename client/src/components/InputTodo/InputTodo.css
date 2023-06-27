@@ -1,36 +1,34 @@
 p.text-center {
-    color: var(--electric-indigo);
-    margin-top: 5px;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: none;
-  }
-  
-  form.d-flex {
-    justify-content: center;
-    align-items: center;
-  }
-  
-  input.form-control {
-    color: var(--raisin-black);
-    background-color: var(--white);
-    border: none;
-    border-radius: 5px;
-    justify-content: center;
-    padding: 10px;
-    margin-right: 5px;
-    width: 23%;
-    height: 4vh;
-    margin-bottom: 10px;
-  }
-  
-  button.btn {
-    color: var(--raisin-black);
-    background-color: var(--moonstone);
-    border: none;
-    border-radius: 5px;
-    padding: 3px;
-    margin-bottom: 10px;
-    font-weight: 20;
-  }
-  
+  color: var(--electric-indigo);
+  margin-top: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: none;
+}
+
+form.d-flex {
+  justify-content: center;
+  align-items: center;
+}
+form.d-flex input.form-control {
+  color: var(--raisin-black);
+  background-color: var(--white);
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 10px;
+  margin-right: 5px;
+  width: 23%;
+  height: 4vh;
+  margin-bottom: 10px;
+}
+
+button.btn {
+  color: var(--raisin-black);
+  background-color: var(--moonstone);
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 10px;
+  font-weight: 20;
+}/*# sourceMappingURL=InputTodo.css.map */

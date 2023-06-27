@@ -1,0 +1,40 @@
+$electric-indigo: var(--electric-indigo);
+$raisin-black: var(--raisin-black);
+$white: var(--white);
+$moonstone: var(--moonstone);
+
+p.text-center {
+  color: $electric-indigo;
+  margin-top: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: none;
+}
+
+form.d-flex {
+  justify-content: center;
+  align-items: center;
+
+  input.form-control {
+    color: $raisin-black;
+    background-color: $white;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 5px;
+    width: 23%;
+    height: 4vh;
+    margin-bottom: 10px;
+  }
+}
+
+button.btn {
+  color: $raisin-black;
+  background-color: $moonstone;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 10px;
+  font-weight: 20;
+}

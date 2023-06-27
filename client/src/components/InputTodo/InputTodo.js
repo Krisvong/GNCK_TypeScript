@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import './InputTodo.css'
+import './InputTodo.scss'
 
 
 const InputTodo = () => {
