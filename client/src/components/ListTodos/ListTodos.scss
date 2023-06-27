@@ -1,0 +1,41 @@
+$electric-indigo: var(--electric-indigo);
+$raisin-black: var(--raisin-black);
+$white: var(--white);
+$moonstone: var(--moonstone);
+$flax: var(--flax);
+$bittersweet: var(--bittersweet);
+
+.table_mt-5_text-center {
+  margin: auto;
+  width: 50%;
+  // border-collapse: collapse;
+  justify-content: space-between;
+  align-items: center;
+
+  th,
+  td {
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    font-size: medium;
+  }
+
+  th {
+    background-color: $moonstone;
+    color: $flax;
+  }
+
+  td {
+    // background-color: $electric-indigo;
+    color: $moonstone;
+
+    button.btn.btn-warning {
+      background-color: $flax;
+    }
+
+    button.btn.btn-danger {
+      background-color: $bittersweet;
+    }
+  }
+}

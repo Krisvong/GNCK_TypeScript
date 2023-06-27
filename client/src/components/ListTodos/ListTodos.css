@@ -1,34 +1,27 @@
 .table_mt-5_text-center {
   margin: auto;
   width: 50%;
-  /* border-collapse: collapse; */
   justify-content: space-between;
   align-items: center;
-  
 }
-
-th, td {
+.table_mt-5_text-center th,
+.table_mt-5_text-center td {
   margin-top: 10px;
   text-align: center;
   padding: 5px;
   border: none;
   font-size: medium;
 }
-
-th {
+.table_mt-5_text-center th {
   background-color: var(--moonstone);
   color: var(--flax);
 }
-
-td {
-  /*background-color: var(--electric-indigo);*/
+.table_mt-5_text-center td {
   color: var(--moonstone);
 }
-
-td button.btn.btn-warning {
+.table_mt-5_text-center td button.btn.btn-warning {
   background-color: var(--flax);
 }
-
-td button.btn.btn-danger {
+.table_mt-5_text-center td button.btn.btn-danger {
   background-color: var(--bittersweet);
-}
+}/*# sourceMappingURL=ListTodos.css.map */

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditTodo from "../EditTodo/EditTodo";
 import Checkbox from "../Checkbox/Checkbox";
-import "./ListTodos.css";
+import "./ListTodos.scss";
 import { BsTrash3Fill } from 'react-icons/bs';
 
 
