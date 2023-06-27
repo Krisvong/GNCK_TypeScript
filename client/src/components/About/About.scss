@@ -16,6 +16,7 @@ $card-title-font-weight: bold;
   .card-deck {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; // Center align the cards horizontally
 
     .card {
       height: $card-height;
@@ -40,6 +41,11 @@ $card-title-font-weight: bold;
         color: $primary-color;
         font-size: $card-title-font-size;
         font-weight: $card-title-font-weight;
+
+        // Example error-handling directive using @warn
+        @if $card-title-font-weight != bold {
+          @warn "The $card-title-font-weight variable should be set to 'bold'.";
+        }
       }
 
       .card-text {
@@ -48,7 +54,6 @@ $card-title-font-weight: bold;
       }
     }
   }
-
 
   svg.svg-inline--fa.fa-github {
     color: black;

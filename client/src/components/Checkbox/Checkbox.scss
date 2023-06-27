@@ -1,7 +1,18 @@
 input#toggle.form-check-input {
   transition: background-color 0.3s ease-in-out;
   background-color: var(--fluorescent-cyan);
+
+  &:checked {
+    background-color: var(--fluorescent-cyan);
+  }
 }
-input#toggle.form-check-input:checked {
-  background-color: var(--fluorescent-cyan);
-}/*# sourceMappingURL=Checkbox.css.map */
+
+
+
+
+    
+
+
+  
+ 
+  

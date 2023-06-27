@@ -4,6 +4,7 @@
 .aboutpage .card-deck {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .aboutpage .card-deck .card {
   height: 20vh;
