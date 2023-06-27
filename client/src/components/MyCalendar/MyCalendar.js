@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Calendar, momentLocalizer } from 'react-big-calendar'  // import the Calendar component and momentLocalizer function from the react-big-calendar package
 import moment from 'moment'  // import the moment library
 import 'react-big-calendar/lib/css/react-big-calendar.css'  // import the default styles for the Calendar component
-import './MyCalendar.css';  // import custom styles for the MyCalendar component
+import './MyCalendar.scss';  // import custom styles for the MyCalendar component
 
 const MyCalendar = () => {
   const [todos, setTodos] = useState([])  // initialize the todos state variable as an empty array

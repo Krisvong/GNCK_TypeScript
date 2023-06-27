@@ -13,14 +13,16 @@
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
+
+  .rbc-time-slot {
+    position: relative;
+    line-height: 15px;
+  }
+
+  .rbc-event {
+    overflow: hidden;
+    background-color: #2196F3;
+    color: #FFF;
+    font-size: 14px;
+  }
 }
-.calendar-container .rbc-time-slot {
-  position: relative;
-  line-height: 15px;
-}
-.calendar-container .rbc-event {
-  overflow: hidden;
-  background-color: #2196F3;
-  color: #FFF;
-  font-size: 14px;
-}/*# sourceMappingURL=MyCalendar.css.map */
