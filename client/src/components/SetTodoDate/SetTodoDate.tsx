@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 
-const SetTodoDate = ({ onSubmit, todo }) => {
+interface SetTodoDateProps {
+  onSubmit: () => void;
+  todo: {
+    description: string;
+  };
+}
+
+const SetTodoDate: React.FC<SetTodoDateProps> = ({ onSubmit, todo }) => {
   // Declare state variable for the selected date
   const [selectedDate, setSelectedDate] = useState("");
 
   // Define a function to be called when the form is submitted
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission behavior, allows the todo list to be updated without the page being reloaded.
 
     try {
@@ -24,7 +31,7 @@ const SetTodoDate = ({ onSubmit, todo }) => {
 
       // Call the onSubmit function to update the todo list after the request has been sent successfully
       onSubmit();
-    } catch (err) {
+    } catch (err: any) {
       // Log the error message to the console if an error occurs
       console.error(err.message);
     }
@@ -32,11 +39,14 @@ const SetTodoDate = ({ onSubmit, todo }) => {
 
   // Render a date input field
   return (
+    <form onSubmit={handleSubmit}>
     <input
       type="date"
       value={selectedDate}
       onChange={(e) => setSelectedDate(e.target.value)}
     />
+    {/* <button type="submit">Submit</button> */}
+    </form>
   );
 };
 

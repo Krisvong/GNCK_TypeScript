@@ -1,12 +1,18 @@
 import React from "react";
 import "./Checkbox.scss";
+import { Todo } from "../ListTodos/ListTodos";
+
 // import { MDBSwitch } from 'mdb-react-ui-kit';
 
+interface CheckboxProps {
+  todo: Todo;
+  onChange: (updatedTodo: Todo) => void;
+}
 
 //Define the Checkbox component with the props 'todo' and 'onChange'
-const Checkbox = ({ todo, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ todo, onChange }) => {
   const handleOnChange = async () => {
-    console.log("Checkbox toggled")
+    console.log("Checkbox toggled");
 
     const updatedTodo = { ...todo, completed: !todo.completed };
     const response = await fetch(`http://localhost:5001/todos/${todo.todo_id}`, {

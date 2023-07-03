@@ -4,13 +4,31 @@ import moment from 'moment'  // import the moment library
 import 'react-big-calendar/lib/css/react-big-calendar.css'  // import the default styles for the Calendar component
 import './MyCalendar.scss';  // import custom styles for the MyCalendar component
 
-const MyCalendar = () => {
-  const [todos, setTodos] = useState([])  // initialize the todos state variable as an empty array
-  const [events, setEvents] = useState([])  // initialize the events state variable as an empty array
+interface Todo {
+  todo_id: number;
+  description: string;
+  due_date:string;
+  completed: boolean;
+}
+
+interface Event {
+  title: string;
+  start: Date;
+  end: Date;
+}
+
+interface MyCalendarProps {
+  todos: Todo[];
+  handleCompletedTodo: () => void; 
+}
+
+const MyCalendar: React.FC<MyCalendarProps> = ({ todos }) => {
+  const [todoState, setTodos] = useState<Todo[]>([])  // initialize the todos state variable as an empty array
+  const [events, setEvents] = useState<Event[]>([])  // initialize the events state variable as an empty array
 
   const localizer = momentLocalizer(moment)  // create a localizer for the Calendar component using the moment library
 
-  const getEvents = (todos) => {  // define a helper function to convert todos to events
+  const getEvents = (todos: Todo[]): Event[] => {  // define a helper function to convert todos to events
     if (!todos) return []  // if todos is undefined or null, return an empty array
     const events = todos
       .filter((todo) => !todo.completed)  // filter out completed todos
@@ -37,8 +55,8 @@ const MyCalendar = () => {
   }, []);
   
   useEffect(() => {  // use the useEffect hook to convert the todos to events and update the events state variable
-    setEvents(getEvents(todos.filter((todo) => !todo.completed)))  // filter out completed todos, convert the remaining todos to events, and update the events state variable
-  }, [todos])
+    setEvents(getEvents(todoState.filter((todo) => !todo.completed)))  // filter out completed todos, convert the remaining todos to events, and update the events state variable
+  }, [todoState])
 
 
   return (
@@ -51,7 +69,7 @@ const MyCalendar = () => {
         startAccessor="start"  // specify that the start time of each event is stored in the "start" property of each object in the events array
         endAccessor="end"  // specify that the end time of each event is stored in the "end" property of each object in the events array
         showMultiDayTimes={false}  // hide the times for multi-day events
-        onSelectEvent={(event) => console.log(event.title)}  //Handle selection of a calendar event
+        onSelectEvent={(event: Event) => console.log(event.title)}  //Handle selection of a calendar event
         onSelectSlot={(slotInfo) => console.log(slotInfo.start)}// Handle selection of a calendar slot (empty space in the calendar)
       />
     </div>

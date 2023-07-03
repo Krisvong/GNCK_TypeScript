@@ -3,24 +3,29 @@ import { BsFillPencilFill } from 'react-icons/bs';
 import { BsFillHandThumbsUpFill } from 'react-icons/bs';
 import { BsFillHandThumbsDownFill } from 'react-icons/bs';
 
-const EditTodo = ({ todo }) => {
-  // Set up state for the description of the todo
+interface EditTodoProps {
+  todo: {
+    todo_id: number;
+    description: string;
+  };
+}
+
+const EditTodo: React.FC<EditTodoProps> = ({ todo }) => {
   const [description, setDescription] = useState(todo.description || "");
 
-  // Add an event listener to the modal when it is hidden
   useEffect(() => {
-    // Get a reference to the modal element using the ID of the todo
     const modalElement = document.querySelector(`#id${todo.todo_id}`);
-    modalElement.addEventListener("hide.bs.modal", () => {
-      // If the description in state has changed, update it with the original value
-      if (description !== todo.description) {
-        setDescription(todo.description);
-      }
-    });
+    if (modalElement) {
+      modalElement.addEventListener("hide.bs.modal", () => {
+        if (description !== todo.description) {
+          setDescription(todo.description);
+        }
+      });
+    }
   }, [description, todo]);
 
   // Function to update the description of the todo
-  const updateDescription = async (e) => {
+  const updateDescription = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       // Create a request body with the updated description
@@ -35,9 +40,9 @@ const EditTodo = ({ todo }) => {
         }
       );
       // Reload the page to show the updated todo list
-      window.location = "/";
-    } catch (err) {
-      console.log(err.message);
+      window.location.href = "/";
+    } catch (err: unknown) {
+      console.log((err as Error).message);
     }
   };
 
@@ -76,13 +81,11 @@ const EditTodo = ({ todo }) => {
               />
             </div>
             <div className="modal-footer">
-              {/* Edit button */}
-              <button
-                type="button"
-                className="btn btn-warning"
-                data-bs-dismiss="modal"
-                onClick={(e) => updateDescription(e)}
-              >
+                <button
+                  type="submit"
+                  className="btn btn-warning"
+                  data-bs-dismiss="modal"
+                >
                 <BsFillHandThumbsUpFill />
               </button>
               {/* Close button */}

@@ -2,9 +2,17 @@ import React, { useState, useEffect } from "react";
 import './CompletedList.scss';
 import { BsXCircleFill } from 'react-icons/bs';
 
+interface CompletedListProps {
+  isCompletedTodoUpdated: boolean;
+}
 
-const CompletedList = ({ isCompletedTodoUpdated }) => {
-  const [completedTasks, setCompletedTasks] = useState([]);
+interface CompletedTask {
+  completed_todo_id: number;
+  description: string;
+}
+
+const CompletedList: React.FC<CompletedListProps> = ({ isCompletedTodoUpdated }) => {
+  const [completedTasks, setCompletedTasks] = useState<CompletedTask[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:5001/completed_todos")
@@ -12,7 +20,7 @@ const CompletedList = ({ isCompletedTodoUpdated }) => {
       .then((data) => setCompletedTasks(data));
   }, [isCompletedTodoUpdated]);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: number) => {
     fetch(`http://localhost:5001/completed_todos/${id}`, {
       method: "DELETE",
     })

@@ -8,7 +8,7 @@ const InputTodo = () => {
   const [dueDate, setDueDate] = useState("");
 
   // Define a function to be called when the form is submitted
-  const onSubmitForm = async (e) => {
+  const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission behavior, allows the todo list to be updated without the page being reloaded.
 
     if (description.trim() === "") {
@@ -29,10 +29,10 @@ const InputTodo = () => {
       });
 
       // Redirect to the home page after the request has been sent successfully
-      window.location = "/";
-    } catch (err) {
+      window.location.href = "/";
+    } catch (err: unknown) {
       // Log the error message to the console if an error occurs
-      console.error(err.message);
+      console.error((err as Error).message);
     }
   };
 

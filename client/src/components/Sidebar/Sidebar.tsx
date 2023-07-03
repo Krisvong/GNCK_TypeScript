@@ -5,37 +5,41 @@ import CompletedList from "../CompletedList/CompletedList";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { Todo } from "../ListTodos/ListTodos";
 
 
-function Sidebar({ isCompletedTodoUpdated, todos, handleCompletedTodo }) {
-    const [showCalendar, setShowCalendar] = useState(false);
+interface SidebarProps {
+  isCompletedTodoUpdated: boolean;
+  todos: Todo[];
+  handleCompletedTodo: () => void;
+}
 
-    const handleToggleCalendar = () => {
-        setShowCalendar(!showCalendar);
-    };
+function Sidebar({ isCompletedTodoUpdated, todos, handleCompletedTodo }: SidebarProps) {
+  const [showCalendar, setShowCalendar] = useState(false);
 
-    return (
-        <div className={`sidebar-container${showCalendar ? " show-calendar" : ""}`}>
+  const handleToggleCalendar = () => {
+    setShowCalendar(!showCalendar);
+  };
 
-            <button className="calendar-button" onClick={handleToggleCalendar}>
-                <FontAwesomeIcon icon={faCalendarAlt} />
-            </button>
-            <div className="calendar-container">
-                {showCalendar && (
-                    <MyCalendar
-                        todos={todos}
-                        handleCompletedTodo={handleCompletedTodo}
-                    />
-                )}
-            </div>
-            <div className="caret-right">
-                <FontAwesomeIcon icon={faCaretRight} />
-            </div>
-            <div className="completed-list">
-                <CompletedList isCompletedTodoUpdated={isCompletedTodoUpdated} />
-            </div>
-        </div>
-    );
+  return (
+    <div className={`sidebar-container${showCalendar ? " show-calendar" : ""}`}>
+
+      <button className="calendar-button" onClick={handleToggleCalendar}>
+        <FontAwesomeIcon icon={faCalendarAlt} />
+      </button>
+      <div className="calendar-container">
+        {showCalendar && (
+          <MyCalendar todos={todos} handleCompletedTodo={handleCompletedTodo} />
+        )}
+      </div>
+      <div className="caret-right">
+        <FontAwesomeIcon icon={faCaretRight} />
+      </div>
+      <div className="completed-list">
+        <CompletedList isCompletedTodoUpdated={isCompletedTodoUpdated} />
+      </div>
+    </div>
+  );
 }
 
 export default Sidebar;

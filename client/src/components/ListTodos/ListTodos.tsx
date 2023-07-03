@@ -2,14 +2,25 @@ import React, { Fragment, useEffect, useState } from "react";
 import EditTodo from "../EditTodo/EditTodo";
 import Checkbox from "../Checkbox/Checkbox";
 import "./ListTodos.scss";
-import { BsTrash3Fill } from 'react-icons/bs';
+import { BsTrash3Fill } from "react-icons/bs";
 
+export interface Todo {
+  todo_id: number;
+  description: string;
+  due_date: string;
+  completed: boolean;
+}
 
-const ListTodos = ({ onTodoCompleted }) => {
-  const [todos, setTodos] = useState([]);
+interface ListTodosProps {
+  todos: Todo[];
+  onTodoCompleted?: (todo: Todo) => void;
+}
+
+const ListTodos = ({ onTodoCompleted }: ListTodosProps) => {
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   // Function to delete a todo with the given id
-  const deleteTodo = async (id) => {
+  const deleteTodo = async (id: number) => {
     try {
       // Send a DELETE request to the server to delete the todo with the given id
       await fetch(`http://localhost:5001/todos/${id}`, {
@@ -18,8 +29,8 @@ const ListTodos = ({ onTodoCompleted }) => {
 
       // Update the state by removing the deleted todo
       setTodos(todos.filter((todo) => todo.todo_id !== id));
-    } catch (err) {
-      console.error(err.message);
+    } catch (err: unknown) {
+      console.error((err as Error).message);
     }
   };
 
@@ -34,8 +45,8 @@ const ListTodos = ({ onTodoCompleted }) => {
 
       // Update the state with the retrieved todos
       setTodos(jsonData);
-    } catch (err) {
-      console.error(err.message);
+    } catch (err: unknown) {
+      console.error((err as Error).message);
     }
   };
 
@@ -66,7 +77,7 @@ const ListTodos = ({ onTodoCompleted }) => {
               <td>
                 <Checkbox
                   todo={todo}
-                  onChange={(updatedTodo) => {
+                  onChange={(updatedTodo: Todo) => {
                     // Find the index of the updated todo in the todos array
                     const index = todos.findIndex(
                       (t) => t.todo_id === updatedTodo.todo_id
@@ -82,7 +93,7 @@ const ListTodos = ({ onTodoCompleted }) => {
                     // Invoke the callback function to update the completed tasks list in App
                     if (updatedTodo.completed) {
                       onTodoCompleted?.(updatedTodo);
-                      setTodos(newTodos.filter((todo) => !todo.completed)) 
+                      setTodos(newTodos.filter((todo) => !todo.completed));
                     }
                   }}
                 />
